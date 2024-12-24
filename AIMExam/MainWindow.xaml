@@ -8,7 +8,7 @@
         Background="#F8F9FA" Icon="/d02.jpg">
 
     <Window.Resources>
-        <!-- GroupBox Style with Modern Design -->
+        <!-- GroupBox Style -->
         <Style TargetType="GroupBox">
             <Setter Property="Template">
                 <Setter.Value>
@@ -34,121 +34,104 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
-        <!-- Button Style with Modern Design -->
-        <Style TargetType="Button">
-            <Setter Property="Background" Value="#0D6EFD"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Padding" Value="10,5"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="BorderBrush" Value="#0A58CA"/>
-
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#0056B3"/>
-                </Trigger>
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Background" Value="#004085"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
-        <!-- DataGrid Style -->
-        <Style TargetType="DataGrid">
-            <Setter Property="BorderBrush" Value="#CED4DA"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="GridLinesVisibility" Value="Horizontal"/>
-            <Setter Property="RowBackground" Value="#F8F9FA"/>
-            <Setter Property="AlternatingRowBackground" Value="#E9ECEF"/>
-            <Setter Property="HorizontalGridLinesBrush" Value="#DEE2E6"/>
-            <Setter Property="VerticalGridLinesBrush" Value="#DEE2E6"/>
-        </Style>
     </Window.Resources>
 
-    <DockPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Menu Bar -->
+            <RowDefinition Height="Auto"/>
+            <!-- Toolbox -->
+            <RowDefinition Height="*"/>
+            <!-- Central Content -->
+            <RowDefinition Height="Auto"/>
+            <!-- Status Bar -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <!-- Left Sidebar -->
+            <ColumnDefinition Width="*"/>
+            <!-- Central Content -->
+            <ColumnDefinition Width="200"/>
+            <!-- Right Sidebar -->
+        </Grid.ColumnDefinitions>
+
         <!-- Menu Bar -->
-        <Menu DockPanel.Dock="Top">
+        <Menu Grid.Row="0" Grid.ColumnSpan="3">
             <MenuItem Header="_File">
-                <MenuItem Header="_New" />
-                <MenuItem Header="_Open" />
-                <MenuItem Header="_Save" />
-                <Separator />
-                <MenuItem Header="_Exit" />
+                <MenuItem Header="_New"/>
+                <MenuItem Header="_Open"/>
+                <MenuItem Header="_Save"/>
+                <Separator/>
+                <MenuItem Header="_Exit"/>
             </MenuItem>
             <MenuItem Header="_Edit">
-                <MenuItem Header="_Undo" />
-                <MenuItem Header="_Redo" />
+                <MenuItem Header="_Undo"/>
+                <MenuItem Header="_Redo"/>
             </MenuItem>
             <MenuItem Header="_View">
-                <MenuItem Header="_Goto Line" />
-                <MenuItem Header="_Find" />
-                <MenuItem Header="_Replace" />
+                <MenuItem Header="_Goto Line"/>
+                <MenuItem Header="_Find"/>
+                <MenuItem Header="_Replace"/>
             </MenuItem>
             <MenuItem Header="_Help">
-                <MenuItem Header="_About" />
+                <MenuItem Header="_About"/>
             </MenuItem>
         </Menu>
 
-        <!-- Main Content -->
-        <DockPanel LastChildFill="True">
-            <!-- Toolbox GroupBox -->
-            <GroupBox Header="Toolbox" DockPanel.Dock="Top">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="8">
-                    <Button Content="+" Width="25" Height="25" Margin="0,0,8,0" Click="Button_Click" FontWeight="Normal" FontSize="9"/>
-                </StackPanel>
-            </GroupBox>
+        <!-- Toolbox -->
+        <GroupBox Header="Toolbox" Grid.Row="1" Grid.ColumnSpan="3">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="8">
+                <Button Content="+" Width="25" Height="25" Margin="0,0,8,0"/>
+            </StackPanel>
+        </GroupBox>
 
-            <!-- Central Content GroupBox -->
-            <GroupBox Header="Central Content" DockPanel.Dock="Left" Width="200">
-                <TextBlock Text="Main Content Area" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </GroupBox>
+        <!-- Central Content -->
+        <GroupBox Header="Central Content" Grid.Row="2" Grid.Column="0">
+            <TextBlock Text="Main Content Area" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </GroupBox>
 
-            <!-- Empty GroupBox -->
-            <GroupBox Header="Empty GroupBox" DockPanel.Dock="Right" Width="200">
-            </GroupBox>
+        <!-- Data Grid -->
+        <GroupBox Header="Data Grid" Grid.Row="2" Grid.Column="1">
+            <TabControl>
+                <TabItem Header="Tab 1">
+                    <DataGrid AutoGenerateColumns="False" Margin="10">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Step" Binding="{Binding Step}"/>
+                            <DataGridTextColumn Header="Length" Binding="{Binding Length}"/>
+                            <DataGridTextColumn Header="Rotation" Binding="{Binding Rotation}"/>
+                            <DataGridTextColumn Header="Angle" Binding="{Binding Angle}"/>
+                            <DataGridTextColumn Header="Radius" Binding="{Binding Radius}"/>
+                            <DataGridTextColumn Header="Speed" Binding="{Binding Speed}"/>
+                            <DataGridTextColumn Header="Flags" Binding="{Binding Flags}"/>
+                            <DataGridTextColumn Header="I/O" Binding="{Binding IO}"/>
+                            <DataGridTextColumn Header="Notes" Binding="{Binding Notes}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+                <TabItem Header="Tab 2">
+                    <Grid Background="#E9ECEF"/>
+                </TabItem>
+            </TabControl>
+        </GroupBox>
 
-            <!-- Data Grid GroupBox -->
-            <GroupBox Header="Data Grid" DockPanel.Dock="Top" Height="Auto">
-                <TabControl>
-                    <TabItem Header="Tab 1">
-                        <DataGrid AutoGenerateColumns="False" Margin="10">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="Step" Binding="{Binding Step}"/>
-                                <DataGridTextColumn Header="Length" Binding="{Binding Length}"/>
-                                <DataGridTextColumn Header="Rotation" Binding="{Binding Rotation}"/>
-                                <DataGridTextColumn Header="Angle" Binding="{Binding Angle}"/>
-                                <DataGridTextColumn Header="Radius" Binding="{Binding Radius}"/>
-                                <DataGridTextColumn Header="Speed" Binding="{Binding Speed}"/>
-                                <DataGridTextColumn Header="Flags" Binding="{Binding Flags}"/>
-                                <DataGridTextColumn Header="I/O" Binding="{Binding IO}"/>
-                                <DataGridTextColumn Header="Notes" Binding="{Binding Notes}"/>
-                            </DataGrid.Columns>
-                        </DataGrid>
-                    </TabItem>
-                    <TabItem Header="Tab 2">
-                        <Grid Background="#E9ECEF"/>
-                    </TabItem>
-                </TabControl>
-            </GroupBox>
-            
-                <!-- Status Bar GroupBox -->
-            <GroupBox Header="Status Bar" DockPanel.Dock="Bottom" Height="50">
-                <DockPanel>
-                    <StatusBar VerticalAlignment="Center" Height="25">
-                        <StatusBarItem>
-                            <TextBlock Text="Ready" VerticalAlignment="Center" />
-                        </StatusBarItem>
-                        <StatusBarItem>
-                            <Separator Margin="5,0" />
-                        </StatusBarItem>
-                        <StatusBarItem>
-                            <TextBlock Text="Status: Connected" VerticalAlignment="Center" />
-                        </StatusBarItem>
-                    </StatusBar>
-                </DockPanel>
-            </GroupBox>
-            
-        </DockPanel>
-    </DockPanel>
+        <!-- Empty GroupBox -->
+        <GroupBox Header="Empty GroupBox" Grid.Row="2" Grid.Column="2">
+        </GroupBox>
+
+        <!-- Status Bar -->
+        <GroupBox Header="Status Bar" Grid.Row="3" Grid.ColumnSpan="3">
+            <StatusBar VerticalAlignment="Center">
+                <StatusBarItem>
+                    <TextBlock Text="Ready" VerticalAlignment="Center"/>
+                </StatusBarItem>
+                <StatusBarItem>
+                    <Separator Margin="5,0"/>
+                </StatusBarItem>
+                <StatusBarItem>
+                    <TextBlock Text="Status: Connected" VerticalAlignment="Center"/>
+                </StatusBarItem>
+            </StatusBar>
+        </GroupBox>
+    </Grid>
 </Window>

@@ -61,7 +61,9 @@
 
   <ItemGroup>
     <PackageReference Include="Bootstrap" Version="5.3.3" />
+    <PackageReference Include="FontAwesome" Version="4.7.0" />
     <PackageReference Include="FontAwesome.Sharp" Version="6.6.0" />
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
   </ItemGroup>
 
   <ItemGroup>
