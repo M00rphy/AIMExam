@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="900"
+        Title="Wire Forming Studio" Height="600" Width="900"
         Background="#F8F9FA" Icon="/d02.jpg">
 
     <Window.Resources>
@@ -34,26 +34,48 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <!-- Button Style -->
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#FFFD0D0D"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#FFCA0A0A"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FFB30000"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#FF850000"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- DataGrid Style -->
+        <Style TargetType="DataGrid">
+            <Setter Property="BorderBrush" Value="#CED4DA"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+            <Setter Property="RowBackground" Value="#F8F9FA"/>
+            <Setter Property="AlternatingRowBackground" Value="#E9ECEF"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="#DEE2E6"/>
+            <Setter Property="VerticalGridLinesBrush" Value="#DEE2E6"/>
+        </Style>
     </Window.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- Menu Bar -->
             <RowDefinition Height="Auto"/>
-            <!-- Toolbox -->
             <RowDefinition Height="*"/>
-            <!-- Central Content -->
             <RowDefinition Height="Auto"/>
-            <!-- Status Bar -->
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
-            <!-- Left Sidebar -->
             <ColumnDefinition Width="*"/>
-            <!-- Central Content -->
             <ColumnDefinition Width="200"/>
-            <!-- Right Sidebar -->
         </Grid.ColumnDefinitions>
 
         <!-- Menu Bar -->
@@ -82,7 +104,7 @@
         <!-- Toolbox -->
         <GroupBox Header="Toolbox" Grid.Row="1" Grid.ColumnSpan="3">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="8">
-                <Button Content="+" Width="25" Height="25" Margin="0,0,8,0"/>
+                <!-- Toolbox buttons and tools go here -->
             </StackPanel>
         </GroupBox>
 
@@ -91,28 +113,41 @@
             <TextBlock Text="Main Content Area" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </GroupBox>
 
-        <!-- Data Grid -->
+        <!-- Data Grid Section -->
         <GroupBox Header="Data Grid" Grid.Row="2" Grid.Column="1">
-            <TabControl>
-                <TabItem Header="Tab 1">
-                    <DataGrid AutoGenerateColumns="False" Margin="10">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Step" Binding="{Binding Step}"/>
-                            <DataGridTextColumn Header="Length" Binding="{Binding Length}"/>
-                            <DataGridTextColumn Header="Rotation" Binding="{Binding Rotation}"/>
-                            <DataGridTextColumn Header="Angle" Binding="{Binding Angle}"/>
-                            <DataGridTextColumn Header="Radius" Binding="{Binding Radius}"/>
-                            <DataGridTextColumn Header="Speed" Binding="{Binding Speed}"/>
-                            <DataGridTextColumn Header="Flags" Binding="{Binding Flags}"/>
-                            <DataGridTextColumn Header="I/O" Binding="{Binding IO}"/>
-                            <DataGridTextColumn Header="Notes" Binding="{Binding Notes}"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </TabItem>
-                <TabItem Header="Tab 2">
-                    <Grid Background="#E9ECEF"/>
-                </TabItem>
-            </TabControl>
+            <Grid>
+                <TabControl>
+                    <TabItem Header="Smart Editor">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Button -->
+                            <Button Content="+" Width="35" Height="35" Margin="0,0,8,0" Grid.Row="0" Click="Button_Click"/>
+
+                            <!-- GroupBox containing DataGrid -->
+                            <GroupBox Header="Data Grid" Grid.Row="1">
+                                <DataGrid AutoGenerateColumns="False" Margin="10">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Step" Binding="{Binding Step}"/>
+                                        <DataGridTextColumn Header="Length" Binding="{Binding Length}"/>
+                                        <DataGridTextColumn Header="Rotation" Binding="{Binding Rotation}"/>
+                                        <DataGridTextColumn Header="Angle" Binding="{Binding Angle}"/>
+                                        <DataGridTextColumn Header="Radius" Binding="{Binding Radius}"/>
+                                        <DataGridTextColumn Header="Speed" Binding="{Binding Speed}"/>
+                                        <DataGridTextColumn Header="Flags" Binding="{Binding Flags}"/>
+                                        <DataGridTextColumn Header="I/O" Binding="{Binding IO}"/>
+                                        <DataGridTextColumn Header="Notes" Binding="{Binding Notes}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </GroupBox>
+                        </Grid>
+                    </TabItem>
+
+                </TabControl>
+            </Grid>
         </GroupBox>
 
         <!-- Empty GroupBox -->
