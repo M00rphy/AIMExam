@@ -24,7 +24,7 @@
                                            Foreground="#495057"
                                            FontWeight="Bold"
                                            FontSize="14"
-                                           Padding="8,4"
+                                           Padding="0,0"
                                            HorizontalAlignment="Left"
                                            VerticalAlignment="Top"/>
                                 <ContentPresenter Grid.Row="1" Margin="8"/>
@@ -40,7 +40,12 @@
             <Setter Property="Background" Value="#FFFD0D0D"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Padding" Value="5,5"/>
+            <Setter Property="Margin" Value="5,5"/>
+            <Setter Property="Width" Value="35"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="BorderBrush" Value="#FFCA0A0A"/>
             <Style.Triggers>
@@ -124,8 +129,12 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
 
-                            <!-- Button -->
-                            <Button Content="+" Width="35" Height="35" Margin="0,0,8,0" Grid.Row="0" Click="Button_Click"/>
+                            <!-- Buttons -->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="0" Margin="10">
+                                <Button Content="+"/>
+                                <Button Content="Edit"/>
+                                <Button Content="-"/>
+                            </StackPanel>
 
                             <!-- GroupBox containing DataGrid -->
                             <GroupBox Header="Data Grid" Grid.Row="1">
@@ -158,13 +167,26 @@
         <GroupBox Header="Status Bar" Grid.Row="3" Grid.ColumnSpan="3">
             <StatusBar VerticalAlignment="Center">
                 <StatusBarItem>
-                    <TextBlock Text="Ready" VerticalAlignment="Center"/>
+                    <TextBlock Text="Aim inc" VerticalAlignment="Center"/>
                 </StatusBarItem>
                 <StatusBarItem>
                     <Separator Margin="5,0"/>
                 </StatusBarItem>
                 <StatusBarItem>
-                    <TextBlock Text="Status: Connected" VerticalAlignment="Center"/>
+                    <TextBlock Text="Machine" VerticalAlignment="Center"/>
+                </StatusBarItem>
+
+                <StatusBarItem>
+                    <Separator Margin="5,0"/>
+                </StatusBarItem>
+                <StatusBarItem>
+                    <TextBlock Text="System" VerticalAlignment="Center"/>
+                </StatusBarItem>
+                <StatusBarItem>
+                    <Separator Margin="5,0"/>
+                </StatusBarItem>
+                <StatusBarItem>
+                    <TextBlock Text="Ready" VerticalAlignment="Center"/>
                 </StatusBarItem>
             </StatusBar>
         </GroupBox>
