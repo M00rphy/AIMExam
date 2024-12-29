@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Wire Forming Studio" Height="600" Width="900"
-        Background="#F8F9FA" Icon="/d02.jpg">
+        Background="#F8F9FA" Icon="/WireFormingStudio.ico">
 
     <Window.Resources>
         <!-- GroupBox Style -->
@@ -13,7 +13,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="GroupBox">
-                        <Border Background="White" BorderBrush="#CED4DA" BorderThickness="1">
+                        <Border Background="White" BorderBrush="#CED4DA" BorderThickness="1" CornerRadius="4">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
@@ -24,7 +24,7 @@
                                            Foreground="#495057"
                                            FontWeight="Bold"
                                            FontSize="14"
-                                           Padding="0,0"
+                                           Padding="4"
                                            HorizontalAlignment="Left"
                                            VerticalAlignment="Top"/>
                                 <ContentPresenter Grid.Row="1" Margin="8"/>
@@ -35,25 +35,24 @@
             </Setter>
         </Style>
 
-        <!-- Button Style -->
+        <!-- Blue Button Style -->
         <Style TargetType="Button">
-            <Setter Property="Background" Value="#FFFD0D0D"/>
+            <Setter Property="Background" Value="#007BFF"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Padding" Value="5,5"/>
+            <Setter Property="Padding" Value="8,4"/>
             <Setter Property="Margin" Value="5,5"/>
-            <Setter Property="Width" Value="35"/>
-            <Setter Property="Height" Value="35"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="BorderBrush" Value="#FFCA0A0A"/>
+            <Setter Property="BorderBrush" Value="#0056b3"/>
+            <Setter Property="FontSize" Value="14"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#FFB30000"/>
+                    <Setter Property="Background" Value="#0056b3"/>
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Background" Value="#FF850000"/>
+                    <Setter Property="Background" Value="#003d80"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -78,48 +77,106 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="148.4"/>
+            <ColumnDefinition Width="51.6"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="24*"/>
+            <ColumnDefinition Width="0"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Menu Bar -->
-        <Menu Grid.Row="0" Grid.ColumnSpan="3">
-            <MenuItem Header="_File">
-                <MenuItem Header="_New"/>
-                <MenuItem Header="_Open"/>
-                <MenuItem Header="_Save"/>
+        <!-- Top Menu Bar -->
+        <Menu Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,53">
+            <MenuItem Header="File">
+                <MenuItem Header="New"/>
+                <MenuItem Header="Open"/>
+                <MenuItem Header="Save"/>
                 <Separator/>
-                <MenuItem Header="_Exit"/>
+                <MenuItem Header="Exit"/>
+                <Separator/>
             </MenuItem>
-            <MenuItem Header="_Edit">
-                <MenuItem Header="_Undo"/>
-                <MenuItem Header="_Redo"/>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Cut"/>
+                <MenuItem Header="Copy"/>
+                <MenuItem Header="Paste"/>
+                <Separator/>
+                <MenuItem Header="Undo"/>
+                <MenuItem Header="Redo"/>
+                <MenuItem Header="Delete"/>
+                <Separator/>
+                <MenuItem Header="Add"/>
+                <Separator/>
             </MenuItem>
-            <MenuItem Header="_View">
-                <MenuItem Header="_Goto Line"/>
-                <MenuItem Header="_Find"/>
-                <MenuItem Header="_Replace"/>
+            <MenuItem Header="View">
+                <MenuItem Header="Refresh"/>
+
+                <MenuItem Header="Data" Margin="0,50,0,0" IsEnabled="False"/>
+                <Separator/>
             </MenuItem>
-            <MenuItem Header="_Help">
-                <MenuItem Header="_About"/>
+            <MenuItem Header="Smart Editor">
+                <StackPanel Orientation="Vertical" Margin="5">
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <MenuItem Header="Power On"/>
+                        <MenuItem Header="Power Off"/>
+                    </StackPanel>
+                    <MenuItem IsEnabled="False" Background="#CED4DA" Width="1" Height="20"/>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <MenuItem Header="Home"/>
+                        <MenuItem Header="Pin 1"/>
+                        <MenuItem Header="Pin 2"/>
+                        <MenuItem Header="Cut"/>
+                        <MenuItem Header="Clamp"/>
+                    </StackPanel>
+                    <TextBlock FontSize="16" FontWeight="Bold" IsEnabled="False">Bender</TextBlock>
+                </StackPanel>
+                <Separator/>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <MenuItem Header="Run"/>
+                    <MenuItem Header="Step"/>
+                    <MenuItem Header="Hold"/>
+                    <MenuItem Header="Reset"/>
+                </StackPanel>
+                <Separator/>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <MenuItem Header="Load"/>
+                    <MenuItem Header="Send"/>
+                    <MenuItem Header="Save"/>
+                </StackPanel>
+                <Separator/>
+            </MenuItem>
+            <MenuItem Header="Controller">
+                <MenuItem Header="Slow"/>
+                <MenuItem Header="Medium"/>
+                <MenuItem Header="Fast"/>
+                <Separator/>
+                <MenuItem Header="Home"/>
+                <MenuItem Header="Stop"/>
+                <Separator/>
+                <MenuItem Header="Distance" IsEnabled="False" FontWeight="Bold"/>
+                <MenuItem Header="Option">
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock Text="up down:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                        <TextBox Width="100" Text="{Binding Path=TextBoxValue, Mode=TwoWay}" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </MenuItem>
             </MenuItem>
         </Menu>
 
         <!-- Toolbox -->
-        <GroupBox Header="Toolbox" Grid.Row="1" Grid.ColumnSpan="3">
+        <GroupBox Header="Toolbox" Grid.ColumnSpan="4" Grid.RowSpan="3" Margin="0,35,0,454">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="8">
-                <!-- Toolbox buttons and tools go here -->
+                <Button Content="Tool 1"/>
+                <Button Content="Tool 2"/>
+                <Button Content="Tool 3"/>
             </StackPanel>
         </GroupBox>
 
         <!-- Central Content -->
-        <GroupBox Header="Central Content" Grid.Row="2" Grid.Column="0">
+        <GroupBox Header="Central Content" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,35,0,0" Grid.RowSpan="3">
             <TextBlock Text="Main Content Area" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </GroupBox>
 
         <!-- Data Grid Section -->
-        <GroupBox Header="Data Grid" Grid.Row="2" Grid.Column="1">
+        <GroupBox Header="Data Grid" Grid.Column="2" Margin="0,35,0,0" Grid.RowSpan="3" Grid.ColumnSpan="2">
             <Grid>
                 <TabControl>
                     <TabItem Header="Smart Editor">
@@ -128,17 +185,13 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-
-                            <!-- Buttons -->
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="0" Margin="10">
                                 <Button Content="+"/>
                                 <Button Content="Edit"/>
                                 <Button Content="-"/>
                             </StackPanel>
-
-                            <!-- GroupBox containing DataGrid -->
                             <GroupBox Header="Data Grid" Grid.Row="1">
-                                <DataGrid AutoGenerateColumns="False" Margin="10">
+                                <DataGrid AutoGenerateColumns="False" Margin="10" ItemsSource="{Binding}">
                                     <DataGrid.Columns>
                                         <DataGridTextColumn Header="Step" Binding="{Binding Step}"/>
                                         <DataGridTextColumn Header="Length" Binding="{Binding Length}"/>
@@ -154,39 +207,24 @@
                             </GroupBox>
                         </Grid>
                     </TabItem>
-
                 </TabControl>
             </Grid>
         </GroupBox>
 
-        <!-- Empty GroupBox -->
-        <GroupBox Header="Empty GroupBox" Grid.Row="2" Grid.Column="2">
-        </GroupBox>
-
         <!-- Status Bar -->
-        <GroupBox Header="Status Bar" Grid.Row="3" Grid.ColumnSpan="3">
+        <GroupBox Header="Status Bar" Grid.Row="2" Grid.ColumnSpan="4" Margin="0,418,0,0">
             <StatusBar VerticalAlignment="Center">
                 <StatusBarItem>
                     <TextBlock Text="Aim inc" VerticalAlignment="Center"/>
                 </StatusBarItem>
                 <StatusBarItem>
-                    <Separator Margin="5,0"/>
-                </StatusBarItem>
-                <StatusBarItem>
                     <TextBlock Text="Machine" VerticalAlignment="Center"/>
-                </StatusBarItem>
-
-                <StatusBarItem>
-                    <Separator Margin="5,0"/>
                 </StatusBarItem>
                 <StatusBarItem>
                     <TextBlock Text="System" VerticalAlignment="Center"/>
                 </StatusBarItem>
                 <StatusBarItem>
-                    <Separator Margin="5,0"/>
-                </StatusBarItem>
-                <StatusBarItem>
-                    <TextBlock Text="Ready" VerticalAlignment="Center"/>
+                    <TextBlock Text="Ready" VerticalAlignment="Center" FontWeight="Bold"/>
                 </StatusBarItem>
             </StatusBar>
         </GroupBox>
