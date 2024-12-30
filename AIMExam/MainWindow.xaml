@@ -42,7 +42,7 @@
      <Setter Property="FontSize" Value="14"/>
      <Setter Property="Foreground" Value="#FF000000"/-->
             <Setter Property="Background" Value="#007BFF"/>
-     <!--Setter Property="BorderBrush" Value="#CCCCCC"/>
+            <!--Setter Property="BorderBrush" Value="#CCCCCC"/>
      <Setter Property="BorderThickness" Value="1"/>
      <Setter Property="Padding" Value="5,8,5,8"/>
      <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -71,11 +71,9 @@
             <Setter Property="IsReadOnly" Value="False"/>
             <Setter Property="IsEnabled" Value="True"/-->
         </Style>
-
-
         <!-- Blue Button Style -->
         <Style TargetType="Button">
-            <Setter Property="Background" Value="Red"/>
+            <Setter Property="Background" Value="#007BFF"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Padding" Value="8,4"/>
@@ -224,25 +222,7 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="0" Margin="10">
-                                <Button Content="Click Me">
-                                    <Button.ContentTemplate>
-                                        <DataTemplate>
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="*"/>
-                                                </Grid.ColumnDefinitions>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="*"/>
-                                                </Grid.RowDefinitions>
-                                                <!--<Image Source="/Resources/Icons/bs-icons/png/plus.png" Grid.Column="0">
-Grid.Row="0" Width="20" Height="20"/-->
-                                                <ContentPresenter Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center"
-VerticalAlignment="Center"/>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </Button.ContentTemplate>
-                                </Button>
-                                
+                                <Button Content="+"/>
                                 <Button Content="Edit"/>
                                 <Button Content="-"/>
                             </StackPanel>
@@ -270,17 +250,13 @@ VerticalAlignment="Center"/>
         <!-- Status Bar -->
         <GroupBox Header="Status Bar" Grid.Row="2" Grid.ColumnSpan="4" Margin="0,418,0,0">
             <StatusBar VerticalAlignment="Center">
-
                 <StatusBarItem>
                     <Image Source="/Resources/Images/AimLogo.png" Width="60" />
                 </StatusBarItem>
 
-
-
                 <StatusBarItem Margin="15,0,0,0">
                     <TextBlock Text="Machine" VerticalAlignment="Center"/>
                 </StatusBarItem>
-
                 <StatusBarItem Margin="15,0,0,0">
                     <Image Source="/Resources/Images/32x32/Machine.png" Width="20" Height="20"/>
                 </StatusBarItem>
