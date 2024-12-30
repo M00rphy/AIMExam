@@ -124,6 +124,9 @@
         <Menu Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,53">
             <MenuItem Header="File">
                 <MenuItem Header="New"/>
+                <MenuItem >
+                    <Image Source="/Resources/Icons/pencil.png"></Image>
+                </MenuItem>
                 <MenuItem Header="Open"/>
                 <MenuItem Header="Save"/>
                 <Separator/>
