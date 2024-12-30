@@ -57,13 +57,11 @@
 
   <ItemGroup>
     <None Remove="d02.jpg" />
-    <None Remove="plus.svg" />
     <None Remove="WireFormingStudio.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="d02.jpg" />
-    <Resource Include="plus.svg" />
     <Resource Include="WireFormingStudio.ico" />
   </ItemGroup>
 

@@ -221,10 +221,16 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="0" Margin="10">
-                                <Button Content="+"/>
-                                <Button Content="Edit"/>
-                                <Button Content="-"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="0" Margin="0,10,542,10">
+                                <Button>
+                                    <Image Source="/Resources/Icons/plus.png"></Image>
+                                </Button>
+                                <Button  Width="30" Height="30">
+                                    <Image Source="/Resources/Icons/pencil.png"></Image>
+                                </Button>
+                                <Button>
+                                    <Image Source="/Resources/Icons/x.png"></Image>
+                                </Button>
                             </StackPanel>
                             <GroupBox Header="Data Grid" Grid.Row="1">
                                 <DataGrid AutoGenerateColumns="False" Margin="10" ItemsSource="{Binding}">
@@ -258,14 +264,14 @@
                     <TextBlock Text="Machine" VerticalAlignment="Center"/>
                 </StatusBarItem>
                 <StatusBarItem Margin="15,0,0,0">
-                    <Image Source="/Resources/Images/32x32/Machine.png" Width="20" Height="20"/>
+                    <Image Source="/Resources/Icons/motherboard.png" Width="20" Height="20"/>
                 </StatusBarItem>
                 <StatusBarItem>
                     <TextBlock Text="System" VerticalAlignment="Center"/>
                 </StatusBarItem>
 
                 <StatusBarItem Margin="15,0,0,0">
-                    <Image Source="/Resources/Images/32x32/System.png" Width="20" Height="20"/>
+                    <Image Source="/Resources/Icons/pc-display.png" Width="20" Height="20"/>
                 </StatusBarItem>
                 <StatusBarItem>
                     <TextBlock Text="Ready" VerticalAlignment="Center" FontWeight="Bold"/>
