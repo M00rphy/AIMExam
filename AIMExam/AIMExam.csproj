@@ -57,7 +57,12 @@
 
   <ItemGroup>
     <None Remove="d02.jpg" />
+    <None Remove="Resources\Images\AimLogo.png" />
     <None Remove="WireFormingStudio.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\AimLogo.png" />
   </ItemGroup>
 
   <ItemGroup>

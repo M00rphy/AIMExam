@@ -56,7 +56,7 @@
         <!--StatusBarItem Styling-->
 
         <Style TargetType="StatusBarItem">
-            <Setter Property="Margin" Value="8"/>
+            <!--<Setter Property="Margin" Value="8"/>-->
             <!--<Setter Property="FontFamily" Value="Arial"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="Foreground" Value="#FF000000"/>
@@ -260,7 +260,7 @@
         <GroupBox Header="Status Bar" Grid.Row="2" Grid.ColumnSpan="4" Margin="0,418,0,0">
             <StatusBar VerticalAlignment="Center">
                 <StatusBarItem>
-                    <Image Source="/Resources/Images/AimLogo.png" Width="60" />
+                    <Image Source="/Resources/Images/AimLogo.png" Width="90"  Stretch="UniformToFill" VerticalAlignment="Center"/>
                 </StatusBarItem>
 
                 <StatusBarItem Margin="15,0,0,0">
