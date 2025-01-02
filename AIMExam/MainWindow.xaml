@@ -127,15 +127,25 @@
         <!-- Top Menu Bar -->
         <Menu Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,53">
             <MenuItem Header="File">
-                <MenuItem Header="New"/>
-                <MenuItem >
-                    <Image Source="/Resources/Icons/pencil.png"></Image>
-                </MenuItem>
-                <MenuItem Header="Open"/>
-                <MenuItem Header="Save"/>
-                <Separator/>
-                <MenuItem Header="Exit"/>
-                <Separator/>
+
+                
+                    <MenuItem Header="New" Icon="IconPath/NewIcon.png"/>
+                    <MenuItem Header="Open" Icon="IconPath/OpenIcon.png"/>
+                    <MenuItem Header="Close" Icon="IconPath/CloseIcon.png"/>
+                    <MenuItem Header="Close All" Icon="IconPath/CloseAllIcon.png"/>
+                    <MenuItem Header="Save" Icon="IconPath/SaveIcon.png"/>
+                    <MenuItem Header="Save As" Icon="IconPath/SaveAsIcon.png"/>
+                    <MenuItem Header="Save All" Icon="IconPath/SaveAllIcon.png"/>
+                    <MenuItem Header="Import..." Icon="IconPath/ImportIcon.png"/>
+                    <MenuItem Header="Benders" Icon="IconPath/BendersIcon.png"/>
+                    <MenuItem Header="Bender Setup" Icon="IconPath/BenderSetupIcon.png"/>
+                    <MenuItem Header="Recent" Icon="IconPath/RecentIcon.png"/>
+                    <MenuItem Header="Info" Icon="IconPath/InfoIcon.png"/>
+                    <MenuItem Header="Help" Icon="IconPath/HelpIcon.png"/>
+                    <MenuItem Header="Options" Icon="IconPath/OptionsIcon.png"/>
+                    <MenuItem Header="Log Out" Icon="IconPath/LogOutIcon.png"/>
+                    <MenuItem Header="Exit" Icon="IconPath/ExitIcon.png"/>
+
             </MenuItem>
             <MenuItem Header="Edit">
                 <MenuItem Header="Cut"/>

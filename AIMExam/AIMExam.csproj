@@ -87,6 +87,7 @@
 
   <ItemGroup>
     <Folder Include="Model\" />
+    <Folder Include="Resources\Icons\bs-icons\PNG\" />
   </ItemGroup>
 
 </Project>
