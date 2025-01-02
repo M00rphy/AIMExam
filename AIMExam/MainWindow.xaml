@@ -264,7 +264,7 @@
         </GroupBox>
 
         <!-- Status Bar -->
-        <GroupBox Header="Status Bar" Grid.Row="2" Grid.ColumnSpan="4" Margin="0,418,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
+        <GroupBox Header="Status Bar" Grid.Row="2" Grid.ColumnSpan="4" Margin="0,418,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="80">
             <StatusBar VerticalAlignment="Bottom" >
                 <StatusBarItem>
                     <Image Source="/Resources/Images/AimLogo.png" Width="90"  Stretch="UniformToFill" VerticalAlignment="Center"/>
