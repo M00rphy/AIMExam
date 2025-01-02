@@ -225,10 +225,10 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="0" Margin="0,10,542,10">
-                                <Button Width="30" Height="30">
+                                <Button Width="30" Height="30" Name="add" Click="add_Click">
                                     <Image Source="/Resources/Icons/plus.png"></Image>
                                 </Button>
-                                <Button  Width="30" Height="30">
+                                <Button  Width="30" Height="30" Click="add_Click">
                                     <Image Source="/Resources/Icons/pencil.png"></Image>
                                 </Button>
                                 <Button Width="30" Height="30">
@@ -236,19 +236,20 @@
                                 </Button>
                             </StackPanel>
                             <GroupBox Header="Data Grid" Grid.Row="1">
-                                <DataGrid AutoGenerateColumns="False" Margin="10" ItemsSource="{Binding}">
+                                <DataGrid AutoGenerateColumns="False" Margin="10" ItemsSource="{Binding DataGridItems}">
                                     <DataGrid.Columns>
-                                        <DataGridTextColumn Header="Step" Binding="{Binding Step}"/>
-                                        <DataGridTextColumn Header="Length" Binding="{Binding Length}"/>
-                                        <DataGridTextColumn Header="Rotation" Binding="{Binding Rotation}"/>
-                                        <DataGridTextColumn Header="Angle" Binding="{Binding Angle}"/>
-                                        <DataGridTextColumn Header="Radius" Binding="{Binding Radius}"/>
-                                        <DataGridTextColumn Header="Speed" Binding="{Binding Speed}"/>
-                                        <DataGridTextColumn Header="Flags" Binding="{Binding Flags}"/>
-                                        <DataGridTextColumn Header="I/O" Binding="{Binding IO}"/>
-                                        <DataGridTextColumn Header="Notes" Binding="{Binding Notes}"/>
+                                        <DataGridTextColumn Header="Step" Binding="{Binding Step}" />
+                                        <DataGridTextColumn Header="Length" Binding="{Binding Length}" />
+                                        <DataGridTextColumn Header="Rotation" Binding="{Binding Rotation}" />
+                                        <DataGridTextColumn Header="Angle" Binding="{Binding Angle}" />
+                                        <DataGridTextColumn Header="Radius" Binding="{Binding Radius}" />
+                                        <DataGridTextColumn Header="Speed" Binding="{Binding Speed}" />
+                                        <DataGridTextColumn Header="Flags" Binding="{Binding Flags}" />
+                                        <DataGridTextColumn Header="I/O" Binding="{Binding IO}" />
+                                        <DataGridTextColumn Header="Notes" Binding="{Binding Notes}" />
                                     </DataGrid.Columns>
                                 </DataGrid>
+
                             </GroupBox>
                         </Grid>
                     </TabItem>
