@@ -174,12 +174,14 @@
                     <MenuItem Header="Hold"/>
                     <MenuItem Header="Reset"/>
                 </StackPanel>
+                <TextBlock FontSize="16" FontWeight="Bold" IsEnabled="False">Program</TextBlock>
                 <Separator/>
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <MenuItem Header="Load"/>
                     <MenuItem Header="Send"/>
                     <MenuItem Header="Save"/>
                 </StackPanel>
+                <TextBlock FontSize="16" FontWeight="Bold" IsEnabled="False">Wire As LRAr</TextBlock>
                 <Separator/>
             </MenuItem>
             <MenuItem Header="Controller">
