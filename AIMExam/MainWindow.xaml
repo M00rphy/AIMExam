@@ -206,15 +206,6 @@
             </MenuItem>
         </Menu>
 
-        <!-- Toolbox -->
-        <GroupBox Header="Toolbox" Grid.ColumnSpan="4" Grid.RowSpan="3" Margin="0,35,0,454">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="8">
-                <Button Content="Tool 1"/>
-                <Button Content="Tool 2"/>
-                <Button Content="Tool 3"/>
-            </StackPanel>
-        </GroupBox>
-
         <!-- Central Content -->
         <GroupBox Header="Central Content" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,35,0,0" Grid.RowSpan="3">
             <TextBlock Text="Main Content Area" HorizontalAlignment="Center" VerticalAlignment="Center"/>
