@@ -27,6 +27,23 @@ namespace AIMExam
             var editLRArSegmentWindow = new editLRArSegment(DataGridItems);
             editLRArSegmentWindow.ShowDialog();
         }
+
+        private void edit_click(object sender, RoutedEventArgs e)
+        {
+            // Get the selected item from the DataGrid
+            DataGridItem selectedItem = dataGrid.SelectedItem as DataGridItem;
+
+            if (selectedItem != null)
+            {
+                // Pass the selected item to the edit window
+                var editLRArSegmentWindow = new editLRArSegment(selectedItem);
+                editLRArSegmentWindow.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select an item to edit.");
+            }
+        }
     }
 
     public class DataGridItem
