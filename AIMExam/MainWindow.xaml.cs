@@ -44,6 +44,21 @@ namespace AIMExam
                 MessageBox.Show("Please select an item to edit.");
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteSelectedRow();
+        }
+
+        private void DeleteSelectedRow()
+        {
+            // Assuming your DataGrid's name is dataGrid
+            var selectedItem = dataGrid.SelectedItem as DataGridItem;
+            if (selectedItem != null)
+            {
+                DataGridItems.Remove(selectedItem);
+            }
+        }
     }
 
     public class DataGridItem

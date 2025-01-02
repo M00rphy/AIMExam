@@ -86,8 +86,8 @@ namespace AIMExam
 
         public EditLRArSegmentViewModel()
         {
-            SaveCommand = new RelayCommand(Save);
-            CancelCommand = new RelayCommand(Cancel);
+            SaveCommand = new RelayCommand(param => Save());
+            CancelCommand = new RelayCommand(param => Cancel());
         }
 
         private void Save()

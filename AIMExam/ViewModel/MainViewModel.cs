@@ -18,6 +18,7 @@ public class MainViewModel : INotifyPropertyChanged
     }
 
     public ICommand AddItemCommand { get; }
+    public ICommand DeleteItemCommand { get; }
 
     public MainViewModel()
     {
@@ -27,7 +28,8 @@ public class MainViewModel : INotifyPropertyChanged
             new DataGridItem { Step = 2, Length = 150, Rotation = 30, Angle = 60, Radius = 40, Speed = 15, Flags = "B", IO = "Output", Notes = "Example 2" }
         };
 
-        AddItemCommand = new RelayCommand(AddItem);
+        AddItemCommand = new RelayCommand(param => AddItem());
+        DeleteItemCommand = new RelayCommand(param => DeleteSelectedItem(param));
     }
 
     private void AddItem()
@@ -45,6 +47,14 @@ public class MainViewModel : INotifyPropertyChanged
             Notes = ""
         };
         Items.Add(newItem);
+    }
+
+    private void DeleteSelectedItem(object parameter)
+    {
+        if (parameter is DataGridItem selectedItem)
+        {
+            Items.Remove(selectedItem);
+        }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
