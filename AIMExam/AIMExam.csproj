@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Resources\Icons\bs-icons\PNG\**" />
+    <EmbeddedResource Remove="Resources\Icons\bs-icons\PNG\**" />
+    <None Remove="Resources\Icons\bs-icons\PNG\**" />
+    <Page Remove="Resources\Icons\bs-icons\PNG\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="C:\Users\alexi\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.css" />
     <Content Remove="C:\Users\alexi\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.css.map" />
     <Content Remove="C:\Users\alexi\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.min.css" />
@@ -87,7 +94,6 @@
 
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="Resources\Icons\bs-icons\PNG\" />
   </ItemGroup>
 
 </Project>
