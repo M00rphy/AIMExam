@@ -128,39 +128,138 @@
         <Menu Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,53">
             <MenuItem Header="File">
 
-                
-                    <MenuItem Header="New" Icon="IconPath/NewIcon.png"/>
-                    <MenuItem Header="Open" Icon="IconPath/OpenIcon.png"/>
-                    <MenuItem Header="Close" Icon="IconPath/CloseIcon.png"/>
-                    <MenuItem Header="Close All" Icon="IconPath/CloseAllIcon.png"/>
-                    <MenuItem Header="Save" Icon="IconPath/SaveIcon.png"/>
-                    <MenuItem Header="Save As" Icon="IconPath/SaveAsIcon.png"/>
-                    <MenuItem Header="Save All" Icon="IconPath/SaveAllIcon.png"/>
-                    <MenuItem Header="Import..." Icon="IconPath/ImportIcon.png"/>
-                    <MenuItem Header="Benders" Icon="IconPath/BendersIcon.png"/>
-                    <MenuItem Header="Bender Setup" Icon="IconPath/BenderSetupIcon.png"/>
-                    <MenuItem Header="Recent" Icon="IconPath/RecentIcon.png"/>
-                    <MenuItem Header="Info" Icon="IconPath/InfoIcon.png"/>
-                    <MenuItem Header="Help" Icon="IconPath/HelpIcon.png"/>
-                    <MenuItem Header="Options" Icon="IconPath/OptionsIcon.png"/>
-                    <MenuItem Header="Log Out" Icon="IconPath/LogOutIcon.png"/>
-                    <MenuItem Header="Exit" Icon="IconPath/ExitIcon.png"/>
+                <MenuItem Header="New">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/file-plus.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Open">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/folder-symlink.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Close">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/folder-minus.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Close All">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/folder-x.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Save">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/save.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Save As">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/save2.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Save All">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/save-fill.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Import...">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/file-earmark-arrow-down.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Benders">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/pc-display-horizontal.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Bender Setup">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/pc.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Recent">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/file-earmark.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Info">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/info.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Help">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/question-diamond.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Options">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/list.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Log Out">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/lock.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Exit">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/x-circle.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+
+
 
             </MenuItem>
             <MenuItem Header="Edit">
-                <MenuItem Header="Cut"/>
-                <MenuItem Header="Copy"/>
-                <MenuItem Header="Paste"/>
+                <MenuItem Header="Cut">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/scissors.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Copy">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/clipboard.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Paste">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/clipboard-check.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator/>
-                <MenuItem Header="Undo"/>
-                <MenuItem Header="Redo"/>
-                <MenuItem Header="Delete"/>
+                <MenuItem Header="Undo">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/arrow-counterclockwise.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Redo">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/arrow-clockwise.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Delete">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/trash.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator/>
-                <MenuItem Header="Add"/>
+                <MenuItem Header="Add">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/plus.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator/>
+
             </MenuItem>
             <MenuItem Header="View">
-                <MenuItem Header="Refresh"/>
+                <MenuItem Header="Refresh">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bs-icons/arrow-repeat.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+
 
                 <MenuItem Header="Data" Margin="0,50,0,0" IsEnabled="False"/>
                 <Separator/>
@@ -236,13 +335,13 @@
                             </Grid.RowDefinitions>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="0" Margin="0,10,542,10">
                                 <Button Width="30" Height="30" Name="add" Click="add_Click">
-                                    <Image Source="/Resources/Icons/plus.png"></Image>
+                                    <Image Source="/Resources/Icons/bs-icons/plus.png"></Image>
                                 </Button>
                                 <Button  Width="30" Height="30" Click="add_Click">
-                                    <Image Source="/Resources/Icons/pencil.png"></Image>
+                                    <Image Source="/Resources/Icons/bs-icons/pencil.png"></Image>
                                 </Button>
                                 <Button Width="30" Height="30">
-                                    <Image Source="/Resources/Icons/x.png"></Image>
+                                    <Image Source="/Resources/Icons/bs-icons/x.png"></Image>
                                 </Button>
                             </StackPanel>
                             <GroupBox Header="Data Grid" Grid.Row="1">
@@ -278,14 +377,14 @@
                     <TextBlock Text="Machine" VerticalAlignment="Center"/>
                 </StatusBarItem>
                 <StatusBarItem Margin="15,0,0,0">
-                    <Image Source="/Resources/Icons/motherboard.png" Width="20" Height="20"/>
+                    <Image Source="/Resources/Icons/bs-icons/motherboard.png" Width="20" Height="20"/>
                 </StatusBarItem>
                 <StatusBarItem>
                     <TextBlock Text="System" VerticalAlignment="Center"/>
                 </StatusBarItem>
 
                 <StatusBarItem Margin="15,0,0,0">
-                    <Image Source="/Resources/Icons/pc-display.png" Width="20" Height="20"/>
+                    <Image Source="/Resources/Icons/bs-icons/pc-display.png" Width="20" Height="20"/>
                 </StatusBarItem>
                 <StatusBarItem>
                     <TextBlock Text="Ready" VerticalAlignment="Center" FontWeight="Bold"/>

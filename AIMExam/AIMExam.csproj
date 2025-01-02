@@ -64,11 +64,129 @@
 
   <ItemGroup>
     <None Remove="d02.jpg" />
+    <None Remove="Resources\Icons\bs-icons\arrow-clockwise.png" />
+    <None Remove="Resources\Icons\bs-icons\arrow-counterclockwise.png" />
+    <None Remove="Resources\Icons\bs-icons\arrow-repeat.png" />
+    <None Remove="Resources\Icons\bs-icons\clipboard-check.png" />
+    <None Remove="Resources\Icons\bs-icons\clipboard.png" />
+    <None Remove="Resources\Icons\bs-icons\file-earmark-arrow-down.png" />
+    <None Remove="Resources\Icons\bs-icons\file-earmark.png" />
+    <None Remove="Resources\Icons\bs-icons\file-plus.png" />
+    <None Remove="Resources\Icons\bs-icons\folder-minus.png" />
+    <None Remove="Resources\Icons\bs-icons\folder-symlink.png" />
+    <None Remove="Resources\Icons\bs-icons\folder-x.png" />
+    <None Remove="Resources\Icons\bs-icons\info.png" />
+    <None Remove="Resources\Icons\bs-icons\list.png" />
+    <None Remove="Resources\Icons\bs-icons\lock.png" />
+    <None Remove="Resources\Icons\bs-icons\motherboard.png" />
+    <None Remove="Resources\Icons\bs-icons\pc-display-horizontal.png" />
+    <None Remove="Resources\Icons\bs-icons\pc-display.png" />
+    <None Remove="Resources\Icons\bs-icons\pc.png" />
+    <None Remove="Resources\Icons\bs-icons\pencil.png" />
+    <None Remove="Resources\Icons\bs-icons\plus.png" />
+    <None Remove="Resources\Icons\bs-icons\question-diamond.png" />
+    <None Remove="Resources\Icons\bs-icons\save-fill.png" />
+    <None Remove="Resources\Icons\bs-icons\save.png" />
+    <None Remove="Resources\Icons\bs-icons\save2.png" />
+    <None Remove="Resources\Icons\bs-icons\scissors.png" />
+    <None Remove="Resources\Icons\bs-icons\trash.png" />
+    <None Remove="Resources\Icons\bs-icons\x-circle.png" />
+    <None Remove="Resources\Icons\bs-icons\x.png" />
     <None Remove="Resources\Images\AimLogo.png" />
     <None Remove="WireFormingStudio.ico" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Icons\bs-icons\arrow-clockwise.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\arrow-counterclockwise.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\arrow-repeat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\clipboard-check.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\clipboard.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Icons\bs-icons\folder-minus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\folder-symlink.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\folder-x.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Icons\bs-icons\file-earmark-arrow-down.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\file-earmark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\file-plus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\info.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\list.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\lock.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\motherboard.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\pc-display-horizontal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\pc-display.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\pc.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\pencil.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\plus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\question-diamond.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\save-fill.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\save.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\save2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\scissors.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\trash.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\x-circle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\x.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Images\AimLogo.png" />
   </ItemGroup>
 
