@@ -418,21 +418,23 @@
                                 </Button>
                             </StackPanel>
 
-                            <GroupBox Header="Data Grid" Grid.Row="1">
-                                <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Margin="10" ItemsSource="{Binding DataGridItems}">
-                                    <DataGrid.Columns>
-                                        <DataGridTextColumn Header="Step" Binding="{Binding Step}"/>
-                                        <DataGridTextColumn Header="Length" Binding="{Binding Length}"/>
-                                        <DataGridTextColumn Header="Rotation" Binding="{Binding Rotation}"/>
-                                        <DataGridTextColumn Header="Angle" Binding="{Binding Angle}"/>
-                                        <DataGridTextColumn Header="Radius" Binding="{Binding Radius}"/>
-                                        <DataGridTextColumn Header="Speed" Binding="{Binding Speed}"/>
-                                        <DataGridTextColumn Header="Flags" Binding="{Binding Flags}"/>
-                                        <DataGridTextColumn Header="I/O" Binding="{Binding IO}"/>
-                                        <DataGridTextColumn Header="Notes" Binding="{Binding Notes}"/>
-                                    </DataGrid.Columns>
-                                </DataGrid>
-                            </GroupBox>
+                            <mah:MetroTabControl>
+                                <mah:MetroTabItem Header="Data Grid">
+                                    <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Margin="10" ItemsSource="{Binding DataGridItems}">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Step" Binding="{Binding Step}"/>
+                                            <DataGridTextColumn Header="Length" Binding="{Binding Length}"/>
+                                            <DataGridTextColumn Header="Rotation" Binding="{Binding Rotation}"/>
+                                            <DataGridTextColumn Header="Angle" Binding="{Binding Angle}"/>
+                                            <DataGridTextColumn Header="Radius" Binding="{Binding Radius}"/>
+                                            <DataGridTextColumn Header="Speed" Binding="{Binding Speed}"/>
+                                            <DataGridTextColumn Header="Flags" Binding="{Binding Flags}"/>
+                                            <DataGridTextColumn Header="I/O" Binding="{Binding IO}"/>
+                                            <DataGridTextColumn Header="Notes" Binding="{Binding Notes}"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </mah:MetroTabItem>
+                            </mah:MetroTabControl>
                         </Grid>
                     </TabItem>
                 </TabControl>
