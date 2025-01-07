@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net9.0-windows7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
@@ -66,8 +66,10 @@
     <None Remove="d02.jpg" />
     <None Remove="Resources\Icons\bs-icons\arrow-clockwise.png" />
     <None Remove="Resources\Icons\bs-icons\arrow-counterclockwise.png" />
+    <None Remove="Resources\Icons\bs-icons\arrow-down.png" />
     <None Remove="Resources\Icons\bs-icons\arrow-repeat.png" />
     <None Remove="Resources\Icons\bs-icons\arrow-return-right.png" />
+    <None Remove="Resources\Icons\bs-icons\arrow-up.png" />
     <None Remove="Resources\Icons\bs-icons\check-circle.png" />
     <None Remove="Resources\Icons\bs-icons\clipboard-check.png" />
     <None Remove="Resources\Icons\bs-icons\clipboard.png" />
@@ -117,10 +119,16 @@
     <Resource Include="Resources\Icons\bs-icons\arrow-counterclockwise.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Icons\bs-icons\arrow-down.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Icons\bs-icons\arrow-repeat.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Icons\bs-icons\arrow-return-right.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bs-icons\arrow-up.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Icons\bs-icons\check-circle.png">
@@ -253,6 +261,13 @@
 
   <ItemGroup>
     <Folder Include="Model\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bootstrap.Wpf" Version="0.0.9" />
+    <PackageReference Include="Infragistics.WPF.Themes.Office2013.Trial" Version="24.2.53" />
+    <PackageReference Include="Infragistics.WPF.Trial" Version="24.2.53" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.10" />
   </ItemGroup>
 
 </Project>

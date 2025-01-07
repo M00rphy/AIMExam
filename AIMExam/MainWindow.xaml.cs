@@ -1,9 +1,10 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
+using MahApps.Metro.Controls;
 
 namespace AIMExam
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         public ObservableCollection<DataGridItem> DataGridItems { get; set; }
 
@@ -58,6 +59,16 @@ namespace AIMExam
             {
                 DataGridItems.Remove(selectedItem);
             }
+        }
+
+        private void up_Click(object sender, RoutedEventArgs e)
+        {
+            // Your implementation here
+        }
+
+        private void down_Click(object sender, RoutedEventArgs e)
+        {
+            // Your implementation here
         }
     }
 
