@@ -3,6 +3,7 @@
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
                  xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                  mc:Ignorable="d"
                  Title="Wire Forming Studio"
@@ -40,16 +41,12 @@
 
         <!--StatusBar Styling-->
         <Style TargetType="StatusBar">
-            <Setter Property="Background" Value="#007BFF"/>
-        </Style>
-
-        <!--StatusBarItem Styling-->
-        <Style TargetType="StatusBarItem">
+            <Setter Property="Background" Value="#FF3F9CFF"/>
         </Style>
 
         <!-- Blue Button Style -->
         <Style TargetType="Button">
-            <Setter Property="Background" Value="#007BFF"/>
+            <Setter Property="Background" Value="#FF3B5998"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Padding" Value="8,4"/>
@@ -78,6 +75,17 @@
             <Setter Property="AlternatingRowBackground" Value="#E9ECEF"/>
             <Setter Property="HorizontalGridLinesBrush" Value="#DEE2E6"/>
             <Setter Property="VerticalGridLinesBrush" Value="#DEE2E6"/>
+        </Style>
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#FF3B5998"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#FF355088"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
     </mah:MetroWindow.Resources>
 
@@ -398,25 +406,34 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="0" Margin="0,10,542,10">
-                                <Button Width="30" Height="30" Name="add" Click="add_Click">
-                                    <Image Source="/Resources/Icons/bs-icons/plus.png"/>
-                                </Button>
-                                <Button Width="30" Height="30" Click="edit_click">
-                                    <Image Source="/Resources/Icons/bs-icons/pencil.png"/>
-                                </Button>
-                                <Button Width="30" Height="30" Click="Button_Click">
-                                    <Image Source="/Resources/Icons/bs-icons/x.png"/>
-                                </Button>
+
+                            <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Stretch">
+                                <!-- Left-aligned buttons -->
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5,0,5,0">
+                                    <Button Width="30" Height="30" Name="add" Click="add_Click">
+                                        <Image Source="pack://application:,,,/Resources/Icons/bs-icons/plus.png" Stretch="Uniform"/>
+                                    </Button>
+                                    <Button Width="30" Height="30" Click="edit_click">
+                                        <Image Source="pack://application:,,,/Resources/Icons/bs-icons/pencil.png" Stretch="Uniform"/>
+                                    </Button>
+                                    <Button Width="30" Height="30" Click="Button_Click">
+                                        <Image Source="pack://application:,,,/Resources/Icons/bs-icons/x.png" Stretch="Uniform"/>
+                                    </Button>
+                                </StackPanel>
+                                <!-- Right-aligned buttons -->
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5,0,5,0">
+                                    <Button Width="30" Height="30" Click="up_Click">
+                                        <Image Source="pack://application:,,,/Resources/Icons/bs-icons/arrow-up.png" Stretch="Uniform"/>
+                                    </Button>
+                                    <Button Width="30" Height="30" Click="down_Click">
+                                        <Image Source="pack://application:,,,/Resources/Icons/bs-icons/arrow-down.png" Stretch="Uniform"/>
+                                    </Button>
+                                </StackPanel>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="0">
-                                <Button Width="30" Height="30" Click="up_Click">
-                                    <Image Source="/Resources/Icons/bs-icons/arrow-up.png"/>
-                                </Button>
-                                <Button Width="30" Height="30" Click="down_Click">
-                                    <Image Source="/Resources/Icons/bs-icons/arrow-down.png"/>
-                                </Button>
-                            </StackPanel>
+
+
+
+
 
                             <mah:MetroTabControl>
                                 <mah:MetroTabItem Header="Data Grid">
