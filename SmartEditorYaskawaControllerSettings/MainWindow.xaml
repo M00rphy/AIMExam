@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SmartEditorYaskawaControllerSettings"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" ResizeMode="CanMinimize">
 
 
     <Window.Resources>
+
         <!-- GroupBox Style -->
         <Style TargetType="GroupBox">
             <Setter Property="Template">
@@ -46,13 +47,15 @@
             <Setter Property="Background" Value="#FF3B5998"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="Padding" Value="10,14"/>
             <Setter Property="Margin" Value="5,5"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="BorderBrush" Value="#0056b3"/>
             <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Width" Value="100"/>
+            <!-- Adjust the width as needed -->
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -123,88 +126,118 @@
         </Style>
 
 
+
     </Window.Resources>
 
-    
     <Grid>
+        <StackPanel>
+            <GroupBox Header="GroupBox" Margin="0,0,470,0">
 
-        <GroupBox Header="GroupBox" Margin="0,10,492,281">
+                <StackPanel>
 
-            <StackPanel>
+                    <StackPanel>
+                        <TextBlock>
+                 <Label Content="IP Address" HorizontalAlignment="Left" Margin="22,10,0,0" VerticalAlignment="Top" x:Name="ip_address"/>
+                 <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        </TextBlock>
+                    </StackPanel>
 
+                    <StackPanel>
+                        <Button Content="Connect" IsEnabled="False" HorizontalAlignment="Left" Margin="0,20,0,0" VerticalAlignment="Top"/>
+                        <Button Content="Disconnect" HorizontalAlignment="Left" Margin="105,-20,0,0"/>
+                        <Button Content="Reboot" HorizontalAlignment="Left" Margin="210,-20,0,0" VerticalAlignment="Top"/>
+                    </StackPanel>
+
+                </StackPanel>
+            </GroupBox >
+
+            <GroupBox Header="Device" Width="186" Margin="70,-120,0,0">
+                <StackPanel>
+                    <RadioButton Content="1. AFM #1" HorizontalAlignment="Left" Margin="10,0,0,0" Height="16"/>
+                    <RadioButton Content="2. AFM #2" HorizontalAlignment="Left" Margin="10,0,0,0" Height="16"/>
+                    <RadioButton Content="3. Option" HorizontalAlignment="Left" Margin="10,0,0,0" Height="16"/>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Margin="550,-120,22,260" Height="120">
+                <StackPanel Height="149" Margin="0,-35,0,0">
+                    <TextBlock Margin="0,-3,0,-3">
+                         <Label>0</Label>
+                         <Button Background="Red" Width="25" Height="15" IsEnabled="False"/> 
+                         <Label>Command</Label>
+                    </TextBlock>
+
+                    <TextBlock Margin="0,-3,0,-3">
+                         <Label>0</Label>
+                         <Button Background="Red" Width="25" Height="15" IsEnabled="False"/> 
+                         <Label>Data</Label>
+                    </TextBlock>
+
+                    <TextBlock Margin="0,-3,0,-3">
+                         <Label>0</Label>
+                         <Button Background="Red" Width="25" Height="15" IsEnabled="False"/> 
+                         <Label>Mach. Motor</Label>
+                    </TextBlock>
+
+                    <TextBlock Margin="0,-3,0,-3">
+                         <Label>0</Label>
+                         <Button Background="Red" Width="25" Height="15" IsEnabled="False"/> 
+                         <Label>Axis Monitor</Label>
+                    </TextBlock>
+
+                    <TextBlock Margin="0,-3,0,-3">
+                         <Label>0</Label>
+                         <Button Background="Red" Width="25" Height="15" IsEnabled="False"/> 
+                         <Label>Command</Label>
+                    </TextBlock>
+
+                </StackPanel>
+            </GroupBox>
+
+        </StackPanel>
+
+        <StackPanel>
+            <GroupBox Margin="0,175,10,170">
+                <StackPanel Margin="0,-35,0,0">
+
+                    <StackPanel>
+                        <TextBlock>
+                <Button Content="Load/Send" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Padding="12,12"/>
+                <Label Width="89">No file loaded</Label>
+                        </TextBlock>
+                        <TextBlock>
                 <StackPanel>
                     <TextBlock>
-                        <Label Content="IP Address" HorizontalAlignment="Left" Margin="22,10,0,0" VerticalAlignment="Top" x:Name="ip_address"/>
-                        <TextBox HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <Label Width="45" Content="Prog#"/>
+                        <TextBox Width="30"/>
                     </TextBlock>
                 </StackPanel>
-
                 <StackPanel>
-                    <Button Content="Connect" IsEnabled="False" HorizontalAlignment="Left" Margin="35,20,0,0" VerticalAlignment="Top"/>
-                    <Button Content="Disconnect" HorizontalAlignment="Left" Margin="105,-20,0,0"/>
-                    <Button Content="Reboot" HorizontalAlignment="Left" Margin="194,-20,0,0" VerticalAlignment="Top"/>
+                    <TextBlock>
+                        <Button Content="Run" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                        <Button Content="Hold" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                        <Button Content="Step" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                        <Button Content="Quit" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                        <Button Content="Clear Alarms" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                    </TextBlock>
+                    <TextBlock Margin="0,10,0,0">
+                        <Button Content="Enable FDR" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                        <Button Content="Disable FDR" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                        <Button Content="Out OFF" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                        <Button Content="Cut" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                        <Button Content="Home" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                    </TextBlock>
                 </StackPanel>
+                
+                
+            </TextBlock>
 
-            </StackPanel>
-        </GroupBox >
-
-        <GroupBox Header="Device" Margin="333,10,338,281">
-            <StackPanel>
-                <RadioButton Content="1. AFM #1" HorizontalAlignment="Left" Margin="10,0,0,0" Height="16"/>
-                <RadioButton Content="2. AFM #2" HorizontalAlignment="Left" Margin="10,0,0,0" Height="16"/>
-                <RadioButton Content="3. Option" HorizontalAlignment="Left" Margin="10,0,0,0" Height="16"/>
-            </StackPanel>
-        </GroupBox>
-       
-        <GroupBox Margin="480,10,22,281">
-            <StackPanel Height="149" Margin="0,-35,0,0">
-                <TextBlock>
-                    <Label>0</Label>
-                    <Button Background="Red" Width="25" Height="15"/> 
-                    <Label>Command</Label>
-                </TextBlock>
-
-                <TextBlock>
-                    <Label>0</Label>
-                    <Button Background="Red" Width="25" Height="15"/> 
-                    <Label>Data</Label>
-                </TextBlock>
-
-                <TextBlock>
-                    <Label>0</Label>
-                    <Button Background="Red" Width="25" Height="15"/> 
-                    <Label>Mach. Motor</Label>
-                </TextBlock>
-
-                <TextBlock>
-                    <Label>0</Label>
-                    <Button Background="Red" Width="25" Height="15"/> 
-                    <Label>Axis Monitor</Label>
-                </TextBlock>
-
-                <TextBlock>
-                    <Label>0</Label>
-                    <Button Background="Red" Width="25" Height="15"/> 
-                    <Label>Command</Label>
-                </TextBlock>
+                    </StackPanel>
 
 
-
-            </StackPanel>
-        </GroupBox>
-
-        <GroupBox Margin="0,175,0,130">
-            <StackPanel Margin="0,-35,0,0">
-                <Button Content="Load/Send" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
-
-                <StackPanel Width="50" Margin="-500,0,0,0">
-                    <Label Width="45">Prog#</Label>
-                    <TextBox Width="30"></TextBox>
                 </StackPanel>
-
-                <Button Content="Run" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
-            </StackPanel>
-        </GroupBox>
+            </GroupBox>
+        </StackPanel>
 
     </Grid>
 </Window>
