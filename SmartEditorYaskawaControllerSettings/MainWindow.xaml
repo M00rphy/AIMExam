@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SmartEditorYaskawaControllerSettings"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="800" ResizeMode="CanMinimize">
+        Title="MainWindow" Height="650" Width="800" ResizeMode="CanMinimize">
 
 
     <Window.Resources>
@@ -240,14 +240,14 @@
         </StackPanel>
 
             <StackPanel>
-                <GroupBox Header="Jog" Margin="0,300,0,0" Height="100">
+                <GroupBox Header="Jog" Margin="0,300,0,0" Height="120">
                     <TextBlock>
                         <StackPanel Width="250">
-                            <Slider Minimum="0" Maximum="100" TickFrequency="10" IsSnapToTickEnabled="True" TickPlacement="BottomRight" Width="80" Foreground="Black"/>
+                            <Slider Minimum="0" Maximum="100" TickFrequency="10" IsSnapToTickEnabled="True" TickPlacement="BottomRight" Width="80" Height="50" Foreground="Black" MinWidth="100" MaxWidth="500"/>
                         </StackPanel>
                         
-                        <StackPanel Margin="0,-35,0,0" Height="95">
-                            <GroupBox Header="Feeder" BorderBrush="Transparent" Width="112" Height="95">
+                        <StackPanel Margin="0,-35,0,0" Height="110">
+                            <GroupBox Header="Feeder" BorderBrush="Transparent" Width="112" Height="110">
                                 <StackPanel Height="62">
                                     <Button Content="Jog+"/>
                                     <Button Content="Jog-"/>
@@ -256,8 +256,8 @@
                             </GroupBox>
                             
                         </StackPanel>
-                        <StackPanel Margin="0,-35,0,0" Height="95">
-                            <GroupBox Header="Bender" BorderBrush="Transparent" Width="112" Height="95">
+                        <StackPanel Margin="0,-35,0,0" Height="110">
+                            <GroupBox Header="Bender" BorderBrush="Transparent" Width="112" Height="110">
                                 <StackPanel Height="62">
                                     <Button Content="Jog+"/>
                                     <Button Content="Jog-"/>
@@ -265,8 +265,8 @@
         
                             </GroupBox>
                         </StackPanel>
-                        <StackPanel Margin="0,-35,0,0" Height="95">
-                            <GroupBox Header="Arm" BorderBrush="Transparent" Width="112" Height="95">
+                        <StackPanel Margin="0,-35,0,0" Height="110">
+                            <GroupBox Header="Arm" BorderBrush="Transparent" Width="112" Height="110">
                                 <StackPanel Height="62">
                                     <Button Content="Jog+"/>
                                     <Button Content="Jog-"/>
@@ -276,8 +276,8 @@
     
                         </StackPanel>
 
-                        <StackPanel Margin="0,-35,0,0" Height="95">
-                            <GroupBox Header="Mandrel" BorderBrush="Transparent" Width="112" Height="95" IsEnabled="False">
+                        <StackPanel Margin="0,-35,0,0" Height="110">
+                            <GroupBox Header="Mandrel" BorderBrush="Transparent" Width="112" Height="110" IsEnabled="False">
                                 <StackPanel Height="62">
                                     <Button Content="Jog+" IsEnabled="False"/>
                                     <Button Content="Jog-" IsEnabled="False"/>
@@ -290,5 +290,15 @@
                 </GroupBox>
             </StackPanel>
 
+        <StackPanel>
+            <GroupBox Header="Read Variable" Margin="0,450,0,0" Height="120">
+                <TextBlock>
+                    <TextBox Width="80"/>
+                    <Button>Read Variable</Button>
+                </TextBlock>
+            </GroupBox>
+        </StackPanel>
+
+        <Button HorizontalAlignment="Right" Margin="0,0,50,-550">Close</Button>
     </Grid>
 </Window>
