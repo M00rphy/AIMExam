@@ -239,5 +239,23 @@
             </GroupBox>
         </StackPanel>
 
+            <StackPanel>
+                <GroupBox Header="Jog" Margin="0,300,0,0" Height="100">
+                    <TextBlock>
+                        <Slider Minimum="0" Maximum="100" TickFrequency="10" IsSnapToTickEnabled="True" TickPlacement="BottomRight" Width="80" Foreground="Black"/>
+                        <StackPanel Margin="0,-35,0,0" Height="95">
+                            <GroupBox Header="Feeder" BorderBrush="Transparent" Width="112" Height="95">
+                                <StackPanel Height="62">
+                                    <Button Content="Jog+"/>
+                                    <Button Content="Jog-"/>
+                                </StackPanel>
+                                
+                            </GroupBox>
+                            
+                        </StackPanel>
+                    </TextBlock>
+                </GroupBox>
+            </StackPanel>
+
     </Grid>
 </Window>
