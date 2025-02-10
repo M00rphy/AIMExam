@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SmartEditorYaskawaControllerSettings"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" ResizeMode="CanMinimize">
+        Title="MainWindow" Height="800" Width="800" ResizeMode="CanMinimize">
 
 
     <Window.Resources>
@@ -242,7 +242,10 @@
             <StackPanel>
                 <GroupBox Header="Jog" Margin="0,300,0,0" Height="100">
                     <TextBlock>
-                        <Slider Minimum="0" Maximum="100" TickFrequency="10" IsSnapToTickEnabled="True" TickPlacement="BottomRight" Width="80" Foreground="Black"/>
+                        <StackPanel Width="250">
+                            <Slider Minimum="0" Maximum="100" TickFrequency="10" IsSnapToTickEnabled="True" TickPlacement="BottomRight" Width="80" Foreground="Black"/>
+                        </StackPanel>
+                        
                         <StackPanel Margin="0,-35,0,0" Height="95">
                             <GroupBox Header="Feeder" BorderBrush="Transparent" Width="112" Height="95">
                                 <StackPanel Height="62">
@@ -253,7 +256,37 @@
                             </GroupBox>
                             
                         </StackPanel>
-                    </TextBlock>
+                        <StackPanel Margin="0,-35,0,0" Height="95">
+                            <GroupBox Header="Bender" BorderBrush="Transparent" Width="112" Height="95">
+                                <StackPanel Height="62">
+                                    <Button Content="Jog+"/>
+                                    <Button Content="Jog-"/>
+                                </StackPanel>
+        
+                            </GroupBox>
+                        </StackPanel>
+                        <StackPanel Margin="0,-35,0,0" Height="95">
+                            <GroupBox Header="Arm" BorderBrush="Transparent" Width="112" Height="95">
+                                <StackPanel Height="62">
+                                    <Button Content="Jog+"/>
+                                    <Button Content="Jog-"/>
+                                </StackPanel>
+        
+                            </GroupBox>
+    
+                        </StackPanel>
+
+                        <StackPanel Margin="0,-35,0,0" Height="95">
+                            <GroupBox Header="Mandrel" BorderBrush="Transparent" Width="112" Height="95" IsEnabled="False">
+                                <StackPanel Height="62">
+                                    <Button Content="Jog+" IsEnabled="False"/>
+                                    <Button Content="Jog-" IsEnabled="False"/>
+                                </StackPanel>
+        
+                            </GroupBox>
+    
+                        </StackPanel>
+</TextBlock>
                 </GroupBox>
             </StackPanel>
 
