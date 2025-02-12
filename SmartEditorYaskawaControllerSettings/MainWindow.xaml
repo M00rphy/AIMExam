@@ -25,7 +25,7 @@
                                    Background="Transparent"
                                    Foreground="#495057"
                                    FontWeight="Bold"
-                                   FontSize="14"
+                                   FontSize="12"
                                    Padding="4"
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"/>
@@ -44,39 +44,79 @@
 
         <!-- Blue Button Style -->
         <Style TargetType="Button">
-            <Setter Property="Background" Value="#FF3B5998"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#FF3B5998" Offset="0"/>
+                        <GradientStop Color="#FF2E4775" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Padding" Value="10,14"/>
-            <Setter Property="Margin" Value="5,5"/>
+            <Setter Property="Padding" Value="8,5"/>
+            <!-- Adjusted padding -->
+            <Setter Property="Margin" Value="2,2"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="BorderBrush" Value="#0056b3"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Width" Value="100"/>
-            <!-- Adjust the width as needed -->
+            <Setter Property="FontSize" Value="11"/>
+            <!-- Reduce if still too large -->
+            <Setter Property="MinWidth" Value="75"/>
+            <!-- Ensures enough space -->
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" Opacity="0.3" BlurRadius="5" Direction="315" ShadowDepth="3"/>
+                </Setter.Value>
+            </Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="4">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="3"
+                        Padding="{TemplateBinding Padding}">
+                            <TextBlock Text="{TemplateBinding Content}" 
+                               TextWrapping="Wrap" 
+                               TextAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#0056b3"/>
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="#FF4C6FBF" Offset="0"/>
+                                <GradientStop Color="#FF3B5998" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Background" Value="#003d80"/>
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="#FF2E4775" Offset="0"/>
+                                <GradientStop Color="#FF1D2F52" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect Color="Black" Opacity="0.2" BlurRadius="4" Direction="135" ShadowDepth="1"/>
+                        </Setter.Value>
+                    </Setter>
                 </Trigger>
             </Style.Triggers>
         </Style>
+
 
 
         <!-- DataGrid Style -->
@@ -143,9 +183,12 @@
                     </StackPanel>
 
                     <StackPanel>
-                        <Button Content="Connect" IsEnabled="False" HorizontalAlignment="Left" Margin="0,20,0,0" VerticalAlignment="Top"/>
-                        <Button Content="Disconnect" HorizontalAlignment="Left" Margin="105,-20,0,0"/>
-                        <Button Content="Reboot" HorizontalAlignment="Left" Margin="210,-20,0,0" VerticalAlignment="Top"/>
+                        <TextBlock>
+                            <Button Content="Connect" IsEnabled="False" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <Button Content="Disconnect" HorizontalAlignment="Left"/>
+                            <Button Content="Reboot" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        </TextBlock>
+                        
                     </StackPanel>
 
                 </StackPanel>
@@ -163,31 +206,31 @@
                 <StackPanel Height="149" Margin="0,-35,0,0">
                     <TextBlock Margin="0,-3,0,-3">
                          <Label>0</Label>
-                         <Button Background="Red" Width="25" Height="15" IsEnabled="False"/> 
+                         <Rectangle Width="25" Height="15" IsEnabled="False" Fill="Red"/> 
                          <Label>Command</Label>
                     </TextBlock>
 
                     <TextBlock Margin="0,-3,0,-3">
                          <Label>0</Label>
-                         <Button Background="Red" Width="25" Height="15" IsEnabled="False"/> 
+                        <Rectangle Width="25" Height="15" IsEnabled="False" Fill="Red"/> 
                          <Label>Data</Label>
                     </TextBlock>
 
                     <TextBlock Margin="0,-3,0,-3">
                          <Label>0</Label>
-                         <Button Background="Red" Width="25" Height="15" IsEnabled="False"/> 
+                        <Rectangle Width="25" Height="15" IsEnabled="False" Fill="Red"/> 
                          <Label>Mach. Motor</Label>
                     </TextBlock>
 
                     <TextBlock Margin="0,-3,0,-3">
                          <Label>0</Label>
-                         <Button Background="Red" Width="25" Height="15" IsEnabled="False"/> 
+                        <Rectangle Width="25" Height="15" IsEnabled="False" Fill="Red"/> 
                          <Label>Axis Monitor</Label>
                     </TextBlock>
 
                     <TextBlock Margin="0,-3,0,-3">
                          <Label>0</Label>
-                         <Button Background="Red" Width="25" Height="15" IsEnabled="False"/> 
+                        <Rectangle Width="25" Height="15" IsEnabled="False" Fill="Red"/> 
                          <Label>Command</Label>
                     </TextBlock>
 
@@ -202,7 +245,7 @@
 
                     <StackPanel>
                         <TextBlock>
-                <Button Content="Load/Send" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Padding="12,12"/>
+                <Button Content="Load/Send" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" />
                 <Label Width="89">No file loaded</Label>
                         </TextBlock>
                         <TextBlock>
@@ -239,16 +282,16 @@
             </GroupBox>
         </StackPanel>
 
-            <StackPanel>
-                <GroupBox Header="Jog" Margin="0,300,0,0" Height="120">
-                    <TextBlock>
+        <StackPanel>
+            <GroupBox Header="Jog" Margin="0,300,0,0" Height="120">
+                <TextBlock>
                         <StackPanel Width="250">
                             <Slider Minimum="0" Maximum="100" TickFrequency="10" IsSnapToTickEnabled="True" TickPlacement="BottomRight" Width="80" Height="50" Foreground="Black" MinWidth="100" MaxWidth="500"/>
                         </StackPanel>
                         
-                        <StackPanel Margin="0,-35,0,0" Height="110">
-                            <GroupBox Header="Feeder" BorderBrush="Transparent" Width="112" Height="110">
-                                <StackPanel Height="62">
+                    <StackPanel Margin="0,-35,0,0" Height="110">
+                        <GroupBox Header="Feeder" BorderBrush="Transparent" Width="112" Height="110" IsEnabled="False">
+                                <StackPanel Height="82">
                                     <Button Content="Jog+"/>
                                     <Button Content="Jog-"/>
                                 </StackPanel>
@@ -256,18 +299,19 @@
                             </GroupBox>
                             
                         </StackPanel>
-                        <StackPanel Margin="0,-35,0,0" Height="110">
-                            <GroupBox Header="Bender" BorderBrush="Transparent" Width="112" Height="110">
-                                <StackPanel Height="62">
+                    <StackPanel Margin="0,-35,0,0" Height="110">
+                        <GroupBox Header="Bender" BorderBrush="Transparent" Width="112" Height="110" IsEnabled="False">
+                                <StackPanel Height="82">
                                     <Button Content="Jog+"/>
                                     <Button Content="Jog-"/>
                                 </StackPanel>
         
                             </GroupBox>
+    
                         </StackPanel>
-                        <StackPanel Margin="0,-35,0,0" Height="110">
-                            <GroupBox Header="Arm" BorderBrush="Transparent" Width="112" Height="110">
-                                <StackPanel Height="62">
+                    <StackPanel Margin="0,-35,0,0" Height="110">
+                        <GroupBox Header="Arm" BorderBrush="Transparent" Width="112" Height="110" IsEnabled="False">
+                                <StackPanel Height="82">
                                     <Button Content="Jog+"/>
                                     <Button Content="Jog-"/>
                                 </StackPanel>
@@ -286,9 +330,9 @@
                             </GroupBox>
     
                         </StackPanel>
-</TextBlock>
-                </GroupBox>
-            </StackPanel>
+                </TextBlock>
+            </GroupBox>
+        </StackPanel>
 
         <StackPanel>
             <GroupBox Header="Read Variable" Margin="0,450,0,0" Height="120">
